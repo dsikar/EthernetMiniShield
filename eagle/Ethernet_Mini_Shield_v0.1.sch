@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1.27" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -518,6 +518,7 @@ DIN A4, landscape with location and doc. field</description>
 <part name="SL3" library="con-amp-quick" deviceset="M02" device=""/>
 <part name="U1" library="SparkFun" deviceset="RJ45-8" device="PTH" value="RJ45"/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
+<part name="SL4" library="con-amp-quick" deviceset="M02" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -530,6 +531,7 @@ DIN A4, landscape with location and doc. field</description>
 <instance part="SL3" gate="G$1" x="87.63" y="116.84"/>
 <instance part="U1" gate="G$1" x="163.83" y="109.22"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
+<instance part="SL4" gate="G$1" x="87.63" y="135.89"/>
 </instances>
 <busses>
 </busses>
@@ -609,21 +611,45 @@ DIN A4, landscape with location and doc. field</description>
 <label x="130.81" y="119.38" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SL3" gate="G$1" pin="2"/>
-<wire x1="95.25" y1="119.38" x2="105.41" y2="119.38" width="0.1524" layer="91"/>
-<label x="106.68" y="119.38" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="SIGNAL" class="0">
-<segment>
 <pinref part="SL3" gate="G$1" pin="1"/>
 <wire x1="95.25" y1="116.84" x2="105.41" y2="116.84" width="0.1524" layer="91"/>
 <label x="106.68" y="116.84" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="END" class="0">
+<segment>
+<pinref part="SL4" gate="G$1" pin="2"/>
+<wire x1="95.25" y1="138.43" x2="105.41" y2="138.43" width="0.1524" layer="91"/>
+<label x="106.68" y="138.43" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="7"/>
 <wire x1="151.13" y1="104.14" x2="140.97" y2="104.14" width="0.1524" layer="91"/>
 <label x="130.81" y="104.14" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="+5V" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="3"/>
+<wire x1="151.13" y1="114.3" x2="140.97" y2="114.3" width="0.1524" layer="91"/>
+<label x="130.81" y="114.3" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SL3" gate="G$1" pin="2"/>
+<wire x1="95.25" y1="119.38" x2="105.41" y2="119.38" width="0.1524" layer="91"/>
+<label x="106.68" y="119.38" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="START" class="0">
+<segment>
+<pinref part="SL4" gate="G$1" pin="1"/>
+<wire x1="95.25" y1="135.89" x2="105.41" y2="135.89" width="0.1524" layer="91"/>
+<label x="106.68" y="135.89" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="5"/>
+<wire x1="151.13" y1="109.22" x2="140.97" y2="109.22" width="0.1524" layer="91"/>
+<label x="130.81" y="109.22" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
